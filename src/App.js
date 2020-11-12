@@ -1,6 +1,6 @@
 
 import './App.css';
-import React,{useState,useEffect} from "react"
+import React,{useState,useEffect,useRef} from "react"
 
 function App() {
 
@@ -8,6 +8,7 @@ function App() {
   const [start,setStart] = useState(false);
   const [timer,setTimer] = useState(5);
   const [wordCount,setWordCount] = useState(0);
+  const inputRef = useRef(null);
 
   function handleChange(event){
 
@@ -21,6 +22,8 @@ function App() {
    setStart(true);
    setTimer(5)
     setInput("");
+    inputRef.current.disabled=false;
+    inputRef.current.focus();
   }
   function endGame(){
   
@@ -67,7 +70,7 @@ function App() {
           <h1>How Fast Do You Type ?</h1>
 
 
-        <textarea rows={8} value={input} onChange={handleChange} disabled={!start}/> 
+        <textarea rows={8} value={input} onChange={handleChange} disabled={!start} ref={inputRef}/> 
 
         <h4>Time Remaining: {timer}</h4>
 

@@ -15,8 +15,8 @@ letter-spacing: 2px;
 
 textarea{
   width:100%;
-  background: #00b800;
-  color:black;
+  //background: #00b800;
+ 
 }
 button{
   font-family: 'Press Start 2P';
@@ -31,3 +31,5 @@ button{
   font-weight: 500;
   font-size: 27px;
 }
+
+
